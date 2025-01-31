@@ -1,0 +1,35 @@
+plugins { // 스프링 부트를 사용하려면 추가해야함
+    id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'org.example' // 지정한 그룹 이름
+version = '1.0-SNAPSHOT'
+
+repositories {  // 의존받을 저장소
+    mavenCentral()
+}
+
+dependencies { // 기본값 지우고 프로젝트 개발에 필요한 의존성 입력
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // 스프링 데이터 JPA (데이터 베이스의 테이블을 객체로 바꿔서 가져오게 하는 도구)
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.h2database:h2' // 인메모리 데이터베이스
+    compileOnly 'org.projectlombok:lombok' // 롬복
+    annotationProcessor 'org.project:lombok'
+// 기본 값
+//    testImplementation platform('org.junit:junit-bom:5.10.0')
+//    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
