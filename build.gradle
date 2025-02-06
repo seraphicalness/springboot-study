@@ -19,7 +19,7 @@ dependencies { // 기본값 지우고 프로젝트 개발에 필요한 의존성
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'com.h2database:h2' // 인메모리 데이터베이스
     compileOnly 'org.projectlombok:lombok' // 롬복
-    annotationProcessor 'org.project:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 // 기본 값
 //    testImplementation platform('org.junit:junit-bom:5.10.0')
 //    testImplementation 'org.junit.jupiter:junit-jupiter'
