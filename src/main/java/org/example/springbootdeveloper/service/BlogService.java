@@ -1,5 +1,6 @@
 package org.example.springbootdeveloper.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.springbootdeveloper.domain.Article;
 import org.example.springbootdeveloper.dto.AddArticleRequest;
@@ -21,5 +22,24 @@ public class BlogService {
 
     public List<Article> findAll(){
         return blogRepository.findAll();  // findAll호출해 article 테이블에 있는 모든 데이터 조회
+    }
+
+    public Article findById(Long id){
+        return blogRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+    }
+
+    public void delete(Long id){
+        blogRepository.deleteById(id);
+    }
+
+    @Transactional // 트랜잭션 매서드
+    public Article update(Long id, AddArticleRequest request){
+        Article article = blogRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+
+        article.update(request.getTitle(), request.getContent());
+
+        return article;
     }
 }
