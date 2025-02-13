@@ -26,7 +26,7 @@ public class BlogService {
 
     public Article findById(Long id){
         return blogRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+                .orElseThrow(() -> new IllegalArgumentException("해당 게시글 id 존재하지 않습니다. : " + id));
     }
 
     public void delete(Long id){

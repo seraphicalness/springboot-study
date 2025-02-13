@@ -18,3 +18,6 @@ INSERT INTO article (title, content, created_at, updated_at) VALUES ('제목3', 
 
 
 SELECT * FROM article;
+
+USE article;
+SHOW TABLES;

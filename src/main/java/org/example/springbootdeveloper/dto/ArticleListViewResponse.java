@@ -1,9 +1,12 @@
 package org.example.springbootdeveloper.dto;
 
+import lombok.Getter;
 import org.example.springbootdeveloper.domain.Article;
 
+@Getter
 public class ArticleListViewResponse {
 
+    @Getter
     private final Long id;
     private final String title;
     private final String content;
@@ -13,4 +16,5 @@ public class ArticleListViewResponse {
         this.title = article.getTitle();
         this.content = article.getContent();
     }
+
 }
