@@ -22,7 +22,6 @@ public class ExampleController {
 
         model.addAttribute("person", examplePerson);
         model.addAttribute("today", LocalDate.now());
-
         return "example"; // example.html 라는 뷰 조회
     }
 

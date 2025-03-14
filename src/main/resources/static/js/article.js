@@ -22,7 +22,8 @@ if(modifyButton){
     // 클릭 이벤트가 감지되면 수정 API 요청
     modifyButton.addEventListener('click', event =>{
         let params = new URLSearchParams(location. search);
-        let id = params.get('id');
+        let id = params.get('id')
+
 
         fetch(`/api/articles/${id}`, {
             method: 'PUT',

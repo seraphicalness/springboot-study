@@ -19,5 +19,16 @@ INSERT INTO article (title, content, created_at, updated_at) VALUES ('제목3', 
 
 SELECT * FROM article;
 
+
+
 USE article;
 SHOW TABLES;
+
+
+CREATE TABLE users (
+                       id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                       email VARCHAR(255) NOT NULL UNIQUE,
+                       password VARCHAR(255) NOT NULL
+);
+
+SELECT * FROM users WHERE email = '1@a.com';
